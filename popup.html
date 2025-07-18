@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Paste clipboard image in Jira</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    /* Модальная структура документа */
+    /*общие настройки для всего документа*/
+    html,
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      margin: 0;
+      min-height: 180px;
+      padding: 0;
+      width: 600px;
+    }
+
+    img {
+      width: 32px;
+    }
+
+    .modal-header {
+      align-items: center;
+      border-bottom: 0.5px solid #dadada;
+      height: 50px;
+    }
+
+    .modal-header-flex {
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #dadada;
+      height: 50px;
+      padding: 0px 8px;
+    }
+
+    .modal-content {
+      padding: 0 22px;
+      margin-top: 10px;
+    }
+
+    .logo {
+      padding: 0px 16px 0px 16px;
+    }
+
+    .version {
+      font-size: 18px;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0px;
+    }
+
+    .flex {
+      opacity: 1;
+      width: 120px;
+    }
+
+    .flex:hover {
+      opacity: 0.4;
+    }
+
+    .flex .fa {
+      font-size: 40px;
+      color: #2f5876;
+    }
+
+    .btn .btn-secondary .active {
+      border: 3px solid transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modal-header-flex">
+    <img class="logo-icon" src="icon-96.png">
+    <h1 class="logo">
+      Paste clipboard image in Jira
+    </h1>
+    <span class="badge badge-secondary version">1.0.0</span>
+  </div>
+  <div class="modal-content" style="border: none;">
+    <label for="inputDomain">Input Jira domain:</label>
+    <input type="url" class="form-control" id="inputDomain" style="width: 100%;" />
+  </div>
+  <div class="modal-content" style="border: none;">
+    <div class="flex-container">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="options" id="off" autocomplete="off" checked> Off
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="options" id="on" autocomplete="off"> On
+        </label>
+      </div>
+      <input type="button" class="btn btn-primary" id="save" value="Save" style="width: 40%;" />
+    </div>
+  </div>
+
+  <script src="jquery-3.3.1.slim.min.js"></script>
+  <script src="popper.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="popup.js"></script>
+
+</body>
+
+</html>
